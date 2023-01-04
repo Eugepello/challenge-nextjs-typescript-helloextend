@@ -5,8 +5,14 @@ interface Props {
   addFavourite: (image: string) => void
 }
 
+let value: Props['favourites']
+
+if (typeof window !== 'undefined') {
+  value = JSON.parse(window.localStorage.getItem('favourites') || '[]')
+}
+
 export const useFavourites = create<Props>((set) => ({
-  favourites: JSON.parse(window.localStorage.getItem('favourites') || '[]'),
+  favourites: value,
   addFavourite: (image: string) =>
     set(({ favourites }) => {
       const draft = favourites.includes(image)
