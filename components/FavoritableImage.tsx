@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useFavourites } from '../state/favourite'
 
 export default function FavoritableImage ({ src }: {src: string}) {
@@ -9,7 +10,7 @@ export default function FavoritableImage ({ src }: {src: string}) {
 
   return (
     <div className='relative'>
-      <img className='w-full h-72 object-cover' src={src} alt='Perritos' />
+      <Image className='w-full h-72 object-cover' src={src} alt='Perritos' />
       <button
         onClick={() => addFavourite(src)}
         className='absolute w-8 h-8 bottom-4 right-4 border-none font-bold'
