@@ -38,7 +38,7 @@ export default function RootLayout ({
           <hr />
           <article>
             <h1 className='font-bold text-3xl mb-3'>Favourites</h1>
-            {favourites.length === 0
+            {favourites?.length === 0
               ? (
                 <p className='text-gray-500'>You have no favourites yet.</p>
                 )
